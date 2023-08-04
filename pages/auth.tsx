@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Auth = () => {
   const [name, setName] = useState("");
@@ -61,6 +62,17 @@ const Auth = () => {
             <h2 className="text-white text-4xl mb-8 font-semibold">
               {variant === "login" ? "Sign in" : "Register"}
             </h2>
+            <div className="text-white mb-1">
+              <span>
+                <span className="font-bold">Guest Account</span>{" "}
+                <AiOutlineArrowRight className="inline" />{" "}
+              </span>
+
+              <span>
+                <span className="font-bold">Email:</span> email@email.com{" "}
+                <span className="font-bold">Password:</span> 123456
+              </span>
+            </div>
             <div className="flex flex-col gap-4">
               {variant === "register" && (
                 <Input
